@@ -19,8 +19,8 @@
         <h2 class="ion-android-time"><b> {{circular.horario}}</b></h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-positive" ng-click="remove(chat)">
-          Favoritar
+        <ion-option-button class="button-positive" ng-click="favoritar(circular)">
+          <span ng-if="circular.favorite == false">Favoritar</span> <span ng-if="circular.favorite == true"> Desfavoritar </span>
         </ion-option-button>
       </ion-item>
     </ion-list>

@@ -1,4 +1,4 @@
-<ion-view view-title="Home">
+<ion-view view-title="Home" cache-view="false">
   <ion-content>
 
     <div title="Circular"></div>
@@ -18,18 +18,23 @@
       <div align="center" class="item item-divider">
         Horários Favoritos
       </div>
+
       <div class="item item-text-wrap">
+
         <h2 class="ion-android-bus" ><b> Direto</b> </h2>
-        <p class="ion-android-time"> 07:30</p>
-        <p class="ion-android-time"> 07:40</p>
-        <p class="ion-android-time"> 07:45</p>
-        <p class="ion-android-time"> 16:45</p>
-        <p class="ion-android-time"> 18:50</p>
+
+        <div ng-repeat="circular in circularesDireto" ng-if="circular.favorite" type="item-text-wrap">
+
+          <p class="ion-android-time"> {{circular.horario}}</p>
+
+        </div>
+
         <h2 class="ion-android-bus"><b> Inverso</b> </h2>
-        <p class="ion-android-time"> 07:35</p>
-        <p class="ion-android-time"> 16:50</p>
-        <p class="ion-android-time"> 18:20</p>
-        <p class="ion-android-time"> 22:15</p>
+        <div ng-repeat="circular in circularesDireto" ng-if="circular.favorite">
+
+          <p class="ion-android-time"> {{circular.horario}}</p>
+
+        </div>
       </div>
     </div>
    <!-- <ion-list>

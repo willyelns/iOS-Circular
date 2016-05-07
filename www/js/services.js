@@ -8,117 +8,147 @@ angular.module('starter.services', [])
       id: 0,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:00'
+      horario: '06:00',
+      favorite: false
     },
     {
       id: 1,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:10'
+      horario: '06:10',
+      favorite: false
     },
     {
       id: 2,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:30'
+      horario: '06:30',
+      favorite: false
     },
     {
       id: 3,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:38'
+      horario: '06:38',
+      favorite: false
     },
     {
       id: 4,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:45'
+      horario: '06:45',
+      favorite: false
     },
     {
       id: 5,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:50'
+      horario: '06:50',
+      favorite: false
     },
     {
       id: 6,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '06:55'
+      horario: '06:55',
+      favorite: false
     },
     {
       id: 7,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:10'
+      horario: '07:10',
+      favorite: true
     },
     {
       id: 8,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:20'
+      horario: '07:20',
+      favorite: true
     },
     {
       id: 9,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:25'
+      horario: '07:25',
+      favorite: true
     },
     {
       id: 10,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:30'
+      horario: '07:30',
+      favorite: true
     },
     {
       id: 11,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:35'
+      horario: '07:35',
+      favorite: false
     },
     {
       id: 12,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '07:53'
+      horario: '07:53',
+      favorite: false
     },
     {
       id: 13,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '08:10'
+      horario: '08:10',
+      favorite: false
     },
     {
       id: 14,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '08:18'
+      horario: '08:18',
+      favorite: false
     },
     {
       id: 15,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '08:35'
+      horario: '08:35',
+      favorite: true
     },
     {
       id: 16,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '08:51'
+      horario: '08:51',
+      favorite: true
     },
     {
       id: 17,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
-      horario: '09:00'
+      horario: '09:00',
+      favorite: true
     },
   ]
 
   return{
     circularDiretoAll: function() {
       return circularDireto;
+    },
+    favoritarDireto: function(id){
+      for (var i = 0; i < circularDireto.length; i++) {
+        if (circularDireto[i].id === parseInt(id)) {
+            if(circularDireto[i].favorite === true){
+              return circularDireto[i].favorite = false;
+            }else{
+              return circularDireto[i].favorite = true;
+            }
+        }
+      }
     }
-  };
+  }
+
 })
 
 .factory('Chats', function() {
