@@ -1,0 +1,27 @@
+<ion-view view-title="Circulares direto">
+  <ion-content class="padding">
+
+<div class="list">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Tipo de dia
+      </div>
+      <select>
+        <option selected>Dias úteis</option>
+        <option >Sábado</option>
+        <option >Férias</option>
+      </select>
+    </label>
+</div>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="circular in circularesDireto" type="item-text-wrap" ng-click="favoritar(circular)" >
+        <h2 class="ion-android-time"><b> {{circular.horario}}</b></h2>
+
+        <ion-option-button class="button-positive" ng-click="favoritar(circular)">
+          <span ng-if="circular.favorite == false">Favoritar</span> <span ng-if="circular.favorite == true"> Desfavoritar </span>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

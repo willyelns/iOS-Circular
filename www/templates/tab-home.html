@@ -1,0 +1,62 @@
+<ion-view view-title="Home"  cache-view="false">
+  <ion-nav-buttons side="right">
+      <button class="button icon ion-ios-gear" ng-click="config()">
+
+      </button>
+   </ion-nav-buttons>
+  <ion-content class="has-header padding">
+
+
+    <div title="Circular"></div>
+    <div class="card">
+      <div align="center" class="item item-divider">
+        Próximos Circulares
+      </div>
+      <div class="item item-text-wrap">
+        <h2 class="ion-android-bus"><b> Direto</b> </h2>
+        <p class="ion-android-time"> 14:40</p>
+        <h2 class="ion-android-bus"><b> Inverso</b> </h2>
+        <p class="ion-android-time">14:35</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div align="center" class="item item-divider">
+        Horários Favoritos
+      </div>
+
+      <div class="item item-text-wrap">
+
+        <h2 class="ion-android-bus" ><b> Direto</b> </h2>
+
+        <div ng-repeat="circular in circularesDireto" ng-if="circular.favorite" type="item-text-wrap">
+
+          <p align="center" ng-if="circularesDireto.length == 0">aqui </p>
+          <p class="ion-android-time"> {{circular.horario}}</p>
+
+        </div>
+
+        <h2 class="ion-android-bus"><b> Inverso</b> </h2>
+        <div ng-repeat="circular in circularesInverso" ng-if="circular.favorite">
+
+          <p class="ion-android-time"> {{circular.horario}}</p>
+
+        </div>
+      </div>
+    </div>
+   <!-- <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list> -->
+
+
+  </ion-content>
+</ion-view>

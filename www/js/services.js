@@ -114,20 +114,65 @@ angular.module('starter.services', [])
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
       horario: '08:35',
-      favorite: true
+      favorite: false
     },
     {
       id: 16,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
       horario: '08:51',
-      favorite: true
+      favorite: false
     },
     {
       id: 17,
       //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
       tipo:1,
       horario: '09:00',
+      favorite: false
+    },
+  ]
+
+  var circularInverso = [
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:1,
+      horario: '06:00',
+      favorite: false
+    },
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:1,
+      horario: '06:30',
+      favorite: false
+    },
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:1,
+      horario: '06:45',
+      favorite: true
+    },
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:1,
+      horario: '07:15',
+      favorite: true
+    },
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:3,
+      horario: '06:45',
+      favorite: true
+    },
+    {
+      id: 0,
+      //Tipo 1 = dias uteis, tipo 2 = sábado, tipo 3 = Férias
+      tipo:3,
+      horario: '07:15',
       favorite: true
     },
   ]
@@ -136,6 +181,24 @@ angular.module('starter.services', [])
     circularDiretoAll: function() {
       return circularDireto;
     },
+
+    circularInversoAll: function() {
+      return circularInverso;
+    },
+
+    desfavoritarAll: function(){
+      for(var i = 0; i < circularDireto.length; i++){
+        if(circularDireto[i].favorite === true){
+          circularDireto[i].favorite = false;
+        }
+      }
+      for(var i = 0; i < circularInverso.length; i++){
+        if(circularInverso[i].favorite === true){
+          circularInverso[i].favorite = false;
+        }
+      }
+    },
+
     favoritarDireto: function(id){
       for (var i = 0; i < circularDireto.length; i++) {
         if (circularDireto[i].id === parseInt(id)) {
@@ -143,6 +206,33 @@ angular.module('starter.services', [])
               return circularDireto[i].favorite = false;
             }else{
               return circularDireto[i].favorite = true;
+            }
+        }
+      }
+    },
+    desfavoritarDireto: function(){
+      for(var i = 0; i < circularDireto.length; i++){
+        if(circularDireto[i].favorite === true){
+          circularDireto[i].favorite = false;
+        }
+      }
+    },
+
+    desfavoritarInverso: function(){
+      for(var i = 0; i < circularInverso.length; i++){
+        if(circularInverso[i].favorite === true){
+          circularInverso[i].favorite = false;
+        }
+      }
+    },
+
+    favoritarInverso: function(id){
+      for (var i = 0; i < circularInverso.length; i++) {
+        if (circularInverso[i].id === parseInt(id)) {
+            if(circularInverso[i].favorite === true){
+              return circularInverso[i].favorite = false;
+            }else{
+              return circularInverso[i].favorite = true;
             }
         }
       }
