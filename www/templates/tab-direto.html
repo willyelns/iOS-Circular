@@ -16,8 +16,7 @@
 
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="circular in circularesDireto" type="item-text-wrap" ng-click="favoritar(circular)" >
-        <h2 class="ion-android-time"><b> {{circular.horario}}</b></h2>
-
+        <h2 class="ion-android-time"><b> {{circular.horario}} <span align="right" class="ion-ios-star" ng-if="circular.favorite === true"></span></b></h2>
         <ion-option-button class="button-positive" ng-click="favoritar(circular)">
           <span ng-if="circular.favorite == false">Favoritar</span> <span ng-if="circular.favorite == true"> Desfavoritar </span>
         </ion-option-button>
